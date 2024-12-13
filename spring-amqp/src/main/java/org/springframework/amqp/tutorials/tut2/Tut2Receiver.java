@@ -5,13 +5,14 @@ import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.util.StopWatch;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 // ackMode can be equal to NONE, MANUAL, AUTO
 // NONE: no acknowledge
 // MANUAL: manual acknowledge
 // AUTO: automatic acknowledge
-@RabbitListener(queues = "tut.hello", ackMode = "AUTO")
+@RabbitListener(queues = "tut.hello",containerFactory = "rabbitListenerContainerFactory",ackMode = "AUTO")
 public class Tut2Receiver {
 
 	private final int instance;
@@ -22,6 +23,17 @@ public class Tut2Receiver {
 
 	@RabbitHandler
 	public void receive(String apartment) throws InterruptedException {
+		StopWatch watch = new StopWatch();
+		watch.start();
+		System.out.println("instance " + this.instance + " [x] Received '" + apartment + "'");
+		doWork(apartment);
+		watch.stop();
+		System.out.println("instance " + this.instance + " [x] Done in " + watch.getTotalTimeSeconds() + "s");
+	}
+
+	@RabbitHandler
+	public void receive(byte[] apartmentBytes) throws InterruptedException {
+		String apartment = new String(apartmentBytes, StandardCharsets.UTF_8);
 		StopWatch watch = new StopWatch();
 		watch.start();
 		System.out.println("instance " + this.instance + " [x] Received '" + apartment + "'");
