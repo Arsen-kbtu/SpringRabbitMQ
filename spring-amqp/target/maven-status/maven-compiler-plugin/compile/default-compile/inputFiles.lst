@@ -17,6 +17,7 @@
 /Users/adilovamir/rabbit-spring/final/SpringRabbitMQ/spring-amqp/src/main/java/org/springframework/amqp/tutorials/tut5/Tut5Receiver.java
 /Users/adilovamir/rabbit-spring/final/SpringRabbitMQ/spring-amqp/src/main/java/org/springframework/amqp/tutorials/tut5/Tut5Sender.java
 /Users/adilovamir/rabbit-spring/final/SpringRabbitMQ/spring-amqp/src/main/java/org/springframework/amqp/tutorials/tut5/controller/MessageController.java
+/Users/adilovamir/rabbit-spring/final/SpringRabbitMQ/spring-amqp/src/main/java/org/springframework/amqp/tutorials/tut5/dto/MessageRequest.java
 /Users/adilovamir/rabbit-spring/final/SpringRabbitMQ/spring-amqp/src/main/java/org/springframework/amqp/tutorials/tut6/Tut6Client.java
 /Users/adilovamir/rabbit-spring/final/SpringRabbitMQ/spring-amqp/src/main/java/org/springframework/amqp/tutorials/tut6/Tut6Config.java
 /Users/adilovamir/rabbit-spring/final/SpringRabbitMQ/spring-amqp/src/main/java/org/springframework/amqp/tutorials/tut6/Tut6Server.java

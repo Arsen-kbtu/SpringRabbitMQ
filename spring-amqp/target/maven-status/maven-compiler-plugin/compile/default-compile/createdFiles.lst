@@ -15,6 +15,7 @@ org/springframework/amqp/tutorials/tut5/Tut5Config.class
 org/springframework/amqp/tutorials/tut6/Tut6Config$ServerConfig.class
 org/springframework/amqp/tutorials/tut3/Tut3Receiver.class
 org/springframework/amqp/tutorials/tut2/models/Apartment.class
+org/springframework/amqp/tutorials/tut5/dto/MessageRequest.class
 org/springframework/amqp/tutorials/tut1/Tut1Receiver.class
 org/springframework/amqp/tutorials/tut4/Tut4Config.class
 org/springframework/amqp/tutorials/tut5/controller/MessageController.class
