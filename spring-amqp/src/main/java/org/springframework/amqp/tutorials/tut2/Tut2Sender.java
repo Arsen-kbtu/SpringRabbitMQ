@@ -1,6 +1,8 @@
 
 package org.springframework.amqp.tutorials.tut2;
 
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,19 +23,14 @@ public class Tut2Sender {
 
 	AtomicInteger count = new AtomicInteger(0);
 
+	AtomicInteger jobId = new AtomicInteger(0);
 	@Scheduled(fixedDelay = 1000, initialDelay = 500)
 	public void send() {
-		StringBuilder builder = new StringBuilder("Hello");
-		if (dots.getAndIncrement() == 4) {
-			dots.set(1);
-		}
-		for (int i = 0; i < dots.get(); i++) {
-			builder.append('.');
-		}
-		builder.append(count.incrementAndGet());
-		String message = builder.toString();
+		String jobDescription = "Job-" + jobId.incrementAndGet() + " apartment";
+		Apartment apartment = new Apartment("Tole bi 87", 86000000, 1000);
+		String message = apartment.toString()+" "+jobId;
 		template.convertAndSend(queue.getName(), message);
-		System.out.println(" [x] Sent '" + message + "'");
-	}
+		System.out.println(" [x] Sent '" + jobDescription + "'");
+}
 
 }

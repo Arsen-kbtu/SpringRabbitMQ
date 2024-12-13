@@ -1,5 +1,10 @@
 spring:
+#  rabbitmq:
+#    host: rabbitserver
+#    username: tutorial
+#    password: tutorial
   rabbitmq:
-    host: rabbitserver
-    username: tutorial
-    password: tutorial
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
