@@ -21,12 +21,12 @@ public class Tut5Sender {
 
 	AtomicInteger count = new AtomicInteger(0);
 
-	private final String[] keys = {"quick.orange.rabbit", "lazy.orange.elephant", "quick.orange.fox",
-			"lazy.brown.fox", "lazy.pink.rabbit", "quick.brown.fox"};
+	private final String[] keys = {"dean.administration.announce", "dean.computer-science.approve", "student.arts.submit",
+			"student.computer-science.query", "student.engineering.project", "teacher.arts.grades", "teacher.engineering.supervise"};
 
 	@Scheduled(fixedDelay = 1000, initialDelay = 500)
 	public void send() {
-		StringBuilder builder = new StringBuilder("Hello to ");
+		StringBuilder builder = new StringBuilder("A message with key: ");
 		if (this.index.incrementAndGet() == keys.length) {
 			this.index.set(0);
 		}

@@ -17,6 +17,11 @@ public class Tut5Receiver {
 		receive(in, 2);
 	}
 
+	@RabbitListener(queues = "#{autoDeleteQueue3.name}")
+	public void receive3(String in) throws InterruptedException {
+		receive(in, 3);
+	}
+
 	public void receive(String in, int receiver) throws InterruptedException {
 		StopWatch watch = new StopWatch();
 		watch.start();

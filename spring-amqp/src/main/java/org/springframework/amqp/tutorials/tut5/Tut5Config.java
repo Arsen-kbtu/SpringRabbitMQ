@@ -38,18 +38,41 @@ public class Tut5Config {
 		}
 
 		@Bean
+		public Queue autoDeleteQueue3() { return new AnonymousQueue(); }
+
+		@Bean
 		public Binding binding1a(TopicExchange topic, Queue autoDeleteQueue1) {
-			return BindingBuilder.bind(autoDeleteQueue1).to(topic).with("*.orange.*");
+			return BindingBuilder.bind(autoDeleteQueue1).to(topic).with("student.*.*");
 		}
 
 		@Bean
 		public Binding binding1b(TopicExchange topic, Queue autoDeleteQueue1) {
-			return BindingBuilder.bind(autoDeleteQueue1).to(topic).with("*.*.rabbit");
+			return BindingBuilder.bind(autoDeleteQueue1).to(topic).with("*.*.lecture");
+		}
+
+		@Bean
+		public Binding binding2b(TopicExchange topic, Queue autoDeleteQueue2) {
+			return BindingBuilder.bind(autoDeleteQueue2).to(topic).with("teacher.*.*");
 		}
 
 		@Bean
 		public Binding binding2a(TopicExchange topic, Queue autoDeleteQueue2) {
-			return BindingBuilder.bind(autoDeleteQueue2).to(topic).with("lazy.#");
+			return BindingBuilder.bind(autoDeleteQueue2).to(topic).with("*.*.lecture");
+		}
+
+		@Bean
+		public Binding binding2c(TopicExchange topic, Queue autoDeleteQueue2) {
+			return BindingBuilder.bind(autoDeleteQueue2).to(topic).with("*.computer-science.*");
+		}
+
+		@Bean
+		public Binding binding3a(TopicExchange topic, Queue autoDeleteQueue3) {
+			return BindingBuilder.bind(autoDeleteQueue3).to(topic).with("dean.*.*");
+		}
+
+		@Bean
+		public Binding binding3b(TopicExchange topic, Queue autoDeleteQueue3) {
+			return BindingBuilder.bind(autoDeleteQueue3).to(topic).with("*.computer-science.*");
 		}
 
 	}

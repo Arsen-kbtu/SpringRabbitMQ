@@ -22,11 +22,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-/**
- * @author Gary Russell
- * @author Scott Deeg
- * @author Arnaud Cogoluègnes
- */
 @SpringBootApplication
 @EnableScheduling
 public class RabbitAmqpTutorialsApplication {
@@ -37,18 +32,21 @@ public class RabbitAmqpTutorialsApplication {
 		return args -> {
 			System.out.println("This app uses Spring Profiles to control its behavior.\n");
 			System.out.println("Options are: ");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=hello-world,receiver");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=hello-world,sender");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=work-queues,receiver");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=work-queues,sender");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=pub-sub,receiver");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=pub-sub,sender");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=routing,receiver");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=routing,sender");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=topics,receiver");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=topics,sender");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=rpc,client");
-			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=rpc,server");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=hello-world,receiver --server.port=8081");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=hello-world,sender --server.port=8082");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=work-queues,receiver --server.port=8083");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=work-queues,sender --server.port=8084");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=pub-sub,receiver --server.port=8085");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=pub-sub,sender --server.port=8086");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=routing,receiver --server.port=8087");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=routing,sender --server.port=8088");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=topics,receiver --server.port=8089");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=topics,sender --server.port=8090");
+
+			System.out.println("API java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=message_controller,topics --server.port=8099");
+
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=rpc,client --server.port=8091");
+			System.out.println("java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=rpc,server --server.port=8092");
 		};
 	}
 

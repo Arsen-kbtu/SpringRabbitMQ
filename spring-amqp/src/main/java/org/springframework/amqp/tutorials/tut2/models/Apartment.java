@@ -1,4 +1,4 @@
-package org.springframework.amqp.tutorials.tut2;
+package org.springframework.amqp.tutorials.tut2.models;
 
 public class Apartment {
     private String address;

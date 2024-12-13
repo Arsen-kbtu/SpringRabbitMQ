@@ -1,7 +1,6 @@
 org/springframework/amqp/tutorials/tut4/Tut4Receiver.class
 org/springframework/amqp/tutorials/tut3/Tut3Config$ReceiverConfig.class
 org/springframework/amqp/tutorials/tut2/Tut2Receiver.class
-org/springframework/amqp/tutorials/tut2/Apartment.class
 org/springframework/amqp/tutorials/tut6/Tut6Client.class
 org/springframework/amqp/tutorials/RabbitAmqpTutorialsRunner.class
 org/springframework/amqp/tutorials/tut4/Tut4Config$ReceiverConfig.class
@@ -15,8 +14,10 @@ org/springframework/amqp/tutorials/tut5/Tut5Config$ReceiverConfig.class
 org/springframework/amqp/tutorials/tut5/Tut5Config.class
 org/springframework/amqp/tutorials/tut6/Tut6Config$ServerConfig.class
 org/springframework/amqp/tutorials/tut3/Tut3Receiver.class
+org/springframework/amqp/tutorials/tut2/models/Apartment.class
 org/springframework/amqp/tutorials/tut1/Tut1Receiver.class
 org/springframework/amqp/tutorials/tut4/Tut4Config.class
+org/springframework/amqp/tutorials/tut5/controller/MessageController.class
 org/springframework/amqp/tutorials/tut6/Tut6Config$ClientConfig.class
 org/springframework/amqp/tutorials/RabbitAmqpTutorialsApplication.class
 org/springframework/amqp/tutorials/tut3/Tut3Config.class
