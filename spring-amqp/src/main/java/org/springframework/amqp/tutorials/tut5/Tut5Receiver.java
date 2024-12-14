@@ -25,10 +25,21 @@ public class Tut5Receiver {
 	public void receive(String in, int receiver) throws InterruptedException {
 		StopWatch watch = new StopWatch();
 		watch.start();
-		System.out.println("instance " + receiver + " [x] Received '" + in + "'");
+
+		String queueRole = "";
+		if(receiver == 1) {
+			queueRole = "Student";
+		}
+		if(receiver == 2) {
+			queueRole = "Teacher";
+		}
+		if(receiver == 3) {
+			queueRole = "Dean";
+		}
+		System.out.println("instance " + queueRole + " [x] Received '" + in + "'");
 		doWork(in);
 		watch.stop();
-		System.out.println("instance " + receiver + " [x] Done in " + watch.getTotalTimeSeconds() + "s");
+		System.out.println("instance " + queueRole + " [x] Done in " + watch.getTotalTimeSeconds() + "s");
 	}
 
 	private void doWork(String in) throws InterruptedException {

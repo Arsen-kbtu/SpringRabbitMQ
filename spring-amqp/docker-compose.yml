@@ -21,7 +21,7 @@ services:
     environment:
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
-      SPRING_PROFILES_ACTIVE: routing,receiver
+      SPRING_PROFILES_ACTIVE: topics,receiver
     depends_on:
       - rabbitmq
 
@@ -35,6 +35,6 @@ services:
     environment:
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
-      SPRING_PROFILES_ACTIVE: routing,sender
+      SPRING_PROFILES_ACTIVE: topics,message_controller
     depends_on:
       - rabbitmq
